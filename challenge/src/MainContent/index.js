@@ -26,6 +26,7 @@ const MainContent = props =>
   setName={props.setName}
   isFiltered={props.isFiltered}
   removeImage={props.removeImage}
+  url={props.url}
   pendingImage={props.pendingImage} />
 </div>
 

@@ -18,6 +18,7 @@ const ImageList = props =>
     <Image
     key={index}
     name={image.name}
+    url={image.url}
     isConfirmed={image.isConfirmed}
     isEditing={image.isEditing}
     handleConfirmation={() => props.toggleConfirmation(image.id)}

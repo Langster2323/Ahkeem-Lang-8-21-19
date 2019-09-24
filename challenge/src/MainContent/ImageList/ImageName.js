@@ -12,7 +12,7 @@ const ImageName = props => {
   }
   return (
     <span>
-    {props.children}
+    <img src={props.children} />
     </span>
   );
 };

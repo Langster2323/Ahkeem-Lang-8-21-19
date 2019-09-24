@@ -12,7 +12,8 @@ constructor(props) {
     isFiltered: false,
     pendingImage: "",
     images: [],
-    search: ""
+    search: "",
+    url: ""
   }
 }
 
@@ -24,6 +25,12 @@ newImageId = () => {
   this.lastImageId += 1;
   return id;
 };
+
+onUpload = e => {
+  e.preventDefault();
+  let file = e.dataTransfer.files[0]
+  this.setState({ url: URL.createObjectURL(file) })
+}
 //Example of a reducer...
 toggleImageProperty = (property, id) =>
   this.setState({
@@ -108,6 +115,7 @@ getConfirmedImages = () => this.state.images.reduce(
         return image.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
       }
     );
+    let { url } = this.state;
 
     return (
       <div className="App">
@@ -123,6 +131,7 @@ getConfirmedImages = () => this.state.images.reduce(
         numberConfirmed={numberConfirmed}
         numberUnconfirmed={numberUnconfirmed}
         filteredImages={filteredImages}
+        url={url}
         search={this.state.search}
         updateSearch={this.updateSearch}
         images={this.state.images}
