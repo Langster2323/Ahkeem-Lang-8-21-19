@@ -87,12 +87,12 @@ toggleConfirmation = id =>
         ],
         pendingImage: ''
       });
-      const user = {
+      const post = {
         name: this.state.name,
       }
-      axios.post(`https://jsonplaceholder.typicode.com/users`, { user })
+      axios.post(`https://jsonplaceholder.typicode.com/posts`, { post })
         .then(res => {
-          return res.data.user
+          return res.data.post
         })
     }
 
