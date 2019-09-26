@@ -2,13 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ImageInputForm = ({ newImageSubmitHandler, handleNameInput, pendingImage }) =>
-  <form onSubmit={newImageSubmitHandler}>
+  <div>
       <input
       type="file"
+      name="image"
+      id="image"
       onChange={handleNameInput}
-      value={pendingImage} />
-      <button type="submit" name="submit" value="submit">Submit</button>
-  </form>
+       />
+      <button onClick={newImageSubmitHandler} type="button" name="submit" value="submit">Submit</button>
+  </div>
 
   ImageInputForm.propTypes = {
     newImageSubmitHandler: PropTypes.func.isRequired,
