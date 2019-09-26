@@ -7,8 +7,8 @@ const Image = props =>
 <li>
   <ImageName
   isEditing={props.isEditing}
-  url={props.url}
   handleNameEdits={e => props.setName(e.target.value)}>
+  <img src={props.url} width="100" />
   {props.name}
   </ImageName>
   <label>
