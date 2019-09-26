@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
+import axios from 'axios';
 
 import Header from '../Header';
 import MainContent from '../MainContent';
@@ -13,7 +14,6 @@ constructor(props) {
     pendingImage: "",
     images: [],
     search: "",
-    url: ""
   }
 }
 
@@ -26,11 +26,6 @@ newImageId = () => {
   return id;
 };
 
-onUpload = e => {
-  e.preventDefault();
-  let file = e.dataTransfer.files[0]
-  this.setState({ url: URL.createObjectURL(file) })
-}
 //Example of a reducer...
 toggleImageProperty = (property, id) =>
   this.setState({
@@ -75,8 +70,9 @@ toggleConfirmation = id =>
     handleNameInput = e =>
     this.setState({ pendingImage: e.target.value });
 
-    newImageSubmitHandler = e => {
-      e.preventDefault();
+    newImageSubmitHandler = () => {
+      let img = document.getElementById('image')
+      let imgUrl = URL.createObjectURL(img.files[0])
       const id = this.newImageId();
       this.setState({
         images: [
@@ -84,12 +80,20 @@ toggleConfirmation = id =>
             name: this.state.pendingImage,
             isConfirmed: false,
             isEditing: false,
+            url: imgUrl,
             id
           },
           ...this.state.images
         ],
         pendingImage: ''
       });
+      const user = {
+        name: this.state.name,
+      }
+      axios.post(`https://jsonplaceholder.typicode.com/users`, { user })
+        .then(res => {
+          return res.data.user
+        })
     }
 
     updateSearch = (e) => {
@@ -115,8 +119,6 @@ getConfirmedImages = () => this.state.images.reduce(
         return image.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
       }
     );
-    let { url } = this.state;
-
     return (
       <div className="App">
       <Header
@@ -131,10 +133,8 @@ getConfirmedImages = () => this.state.images.reduce(
         numberConfirmed={numberConfirmed}
         numberUnconfirmed={numberUnconfirmed}
         filteredImages={filteredImages}
-        url={url}
         search={this.state.search}
         updateSearch={this.updateSearch}
-        images={this.state.images}
         toggleConfirmation={this.toggleConfirmation}
         toggleEditing={this.toggleEditing}
         setName={this.setName}
