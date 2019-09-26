@@ -26,7 +26,7 @@ body {
 
 h1,
 p,
-form button {
+.form .button {
   color: white;
 }
 
@@ -48,7 +48,7 @@ p {
   text-shadow: 0 1px 0 rgba(0, 0, 0, .25);
 }
 
-form {
+.form {
   width: 60%;
   background: white;
   display: inline-block;
@@ -61,7 +61,7 @@ form {
   box-shadow: 0 1px 14px rgba(0, 0, 0, .12);
 }
 
-form button {
+.form .button {
   padding: 0 1em;
   font-size: 1em;
   background: #7bcbc4;
@@ -83,12 +83,12 @@ ul li {
   position: relative;
 }
 
-button {
+.button {
   cursor: pointer;
 }
 
 input,
-button {
+.button {
   border: none;
   outline: none;
 }
@@ -206,18 +206,18 @@ td:last-child {
   ul li {
     margin-bottom: 1em;
   }
-  form {
+  .form {
     width: 95%;
     -ms-flex-direction: column;
     flex-direction: column;
     margin: auto;
     margin-top: 2.5em;
   }
-  form button {
+  .form .button {
     padding: 12px 0;
     margin-top: .5em;
   }
-  form input {
+  .form input {
     font-size: 1em;
     text-align: center;
   }
@@ -253,7 +253,7 @@ td:last-child {
   h2 {
     font-size: 1.95em;
   }
-  form {
+  .form {
     margin: 4.15em auto 0;
     z-index: 3000;
     position: relative;
