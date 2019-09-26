@@ -11,7 +11,7 @@ const ImageList = props =>
 /*toggleConfirmation... Closure...
 */
   <ul>
-  <PendingImage name={props.pendingImage}/>
+  <PendingImage name={props.pendingImage} />
   {props.filteredImages
     .filter(image => !props.isFiltered || image.isConfirmed)
     .map((image, index) =>
