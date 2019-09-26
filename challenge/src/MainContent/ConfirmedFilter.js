@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const ConfirmedFilter = props =>
   <div>
@@ -11,10 +10,5 @@ const ConfirmedFilter = props =>
       checked={props.isFiltered} /> Hide those who have not responded
     </label>
   </div>
-
-  ConfirmedFilter.propTypes = {
-    toggleFilter: PropTypes.func.isRequired,
-    isFiltered: PropTypes.bool.isRequired
-  }
 
   export default ConfirmedFilter;

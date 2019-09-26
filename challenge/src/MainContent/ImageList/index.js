@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import Image from './Image';
 import PendingImage from './PendingImage';
@@ -27,15 +26,5 @@ const ImageList = props =>
     handleRemove={() => props.removeImage(image.id)} />
     )}
   </ul>;
-
-  ImageList.propTypes = {
-    images: PropTypes.array.isRequired,
-    toggleConfirmation: PropTypes.func.isRequired,
-    toggleEditing: PropTypes.func.isRequired,
-    setName: PropTypes.func.isRequired,
-    isFiltered: PropTypes.bool.isRequired,
-    removeImage: PropTypes.func.isRequired,
-    pendingImage: PropTypes.string.isRequired
-  };
 
 export default ImageList;

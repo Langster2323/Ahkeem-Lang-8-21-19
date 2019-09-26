@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const PendingImage = props => {
   if(props.name) {
@@ -12,10 +11,6 @@ const PendingImage = props => {
     );
   }
   return null;
-};
-
-PendingImage.propTypes = {
-  name: PropTypes.string.isRequired
 };
 
 export default PendingImage;

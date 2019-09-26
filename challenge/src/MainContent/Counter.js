@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const Counter = props =>
   <table className="counter">
@@ -18,11 +17,5 @@ const Counter = props =>
       </tr>
     </tbody>
   </table>;
-
-Counter.propTypes = {
-  numberConfirmed: PropTypes.number,
-  numberUnconfirmed: PropTypes.number,
-  totalInvited: PropTypes.number
-}
 
 export default Counter;

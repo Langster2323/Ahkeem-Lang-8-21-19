@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const ImageName = props => {
   if (props.isEditing) {
@@ -15,11 +14,6 @@ const ImageName = props => {
     {props.children}
     </span>
   );
-};
-
-ImageName.propTypes = {
-  isEditing: PropTypes.bool.isRequired,
-  handleNameEdits: PropTypes.func.isRequired
 };
 
 export default ImageName;

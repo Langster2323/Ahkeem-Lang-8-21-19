@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import ConfirmedFilter from './ConfirmedFilter';
 import ImageList from './ImageList';
@@ -29,19 +28,5 @@ const MainContent = props =>
   url={props.url}
   pendingImage={props.pendingImage} />
 </div>
-
-MainContent.propTypes = {
-  toggleFilter: PropTypes.func.isRequired,
-  isFiltered: PropTypes.bool.isRequired,
-  totalInvited: PropTypes.number.isRequired,
-  numberConfirmed: PropTypes.number.isRequired,
-  numberUnconfirmed: PropTypes.number.isRequired,
-  images: PropTypes.array.isRequired,
-  toggleConfirmation: PropTypes.func.isRequired,
-  toggleEditing: PropTypes.func.isRequired,
-  setName: PropTypes.func.isRequired,
-  removeImage: PropTypes.func.isRequired,
-  pendingImage: PropTypes.string.isRequired
-}
 
 export default MainContent;

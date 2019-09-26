@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const ImageInputForm = ({ newImageSubmitHandler, handleNameInput, pendingImage }) =>
   <div>
@@ -11,11 +10,5 @@ const ImageInputForm = ({ newImageSubmitHandler, handleNameInput, pendingImage }
        />
       <button onClick={newImageSubmitHandler} type="button" name="submit" value="submit">Submit</button>
   </div>
-
-  ImageInputForm.propTypes = {
-    newImageSubmitHandler: PropTypes.func.isRequired,
-    pendingImage: PropTypes.string.isRequired,
-    handleNameInput: PropTypes.func.isRequired
-  }
 
 export default ImageInputForm;

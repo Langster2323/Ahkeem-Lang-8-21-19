@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const SearchBox = props =>
 <div className="searchBar">
@@ -9,10 +8,5 @@ const SearchBox = props =>
   onChange={props.updateSearch}
   placeholder="Select documents..." />
   </div>
-
-SearchBox.propTypes = {
-  search: PropTypes.string,
-  updateSearch: PropTypes.func
-}
 
 export default SearchBox;
